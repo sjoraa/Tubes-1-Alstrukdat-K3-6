@@ -29,6 +29,30 @@ int length(Queue q)
     }
 }
 
+boolean isInQueue(Queue q, char *str){
+    Queue qtemp;
+    ElType bin;
+    boolean found=false;
+    CreateQueue(&qtemp);
+    if (isEmpty(q)){
+        return false;
+    }
+    else{
+        while(!isEmpty(q)){
+            enqueue(&qtemp,HEAD(q));
+            dequeue(&q,&bin);
+        }
+        while(!isEmpty(qtemp)){
+            dequeue(&qtemp,&bin);
+            if(compareSTR(bin,str)){
+                found=true;
+            }
+            enqueue(&q,bin);
+        }
+        return found;
+    }
+}
+
 void enqueue(Queue *q, ElType val)
 {
     if (isFull(*q))
