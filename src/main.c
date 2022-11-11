@@ -82,7 +82,7 @@ int main(){
         }
         else if (compareSTR(command,"DELETE GAME"))
         {
-            DELETEGAME(&arraygame);
+            DELETEGAME(&arraygame, qgame);
             NEXT();
         }
         else if (compareSTR(command,"QUEUE GAME"))
