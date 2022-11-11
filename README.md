@@ -8,5 +8,3 @@ Tugas Besar 1 Algoritma dan Struktur Data STI meminta mahasiswa untuk membuat BN
 18221014 Raden Sjora Okalani\
 18221015 Fariz Putra Hanggara\
 18221020 Aniqa Fayyaza Akbar
-
-# How To Play
