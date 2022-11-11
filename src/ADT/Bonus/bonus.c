@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include "../mesinkata/mesinkata.h"
 
-char kotak[10] = { 'o', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-int checkwin();
-void board();
 
-void TICTACTOE()
+int checkwin(char *kotak);
+void board(char *kotak);
+
+void TICTACTOE(char *kotak)
 {
     int menang = 100, kalah = 0, seri = 50;
     int pemain = 1, i;
@@ -13,7 +13,7 @@ void TICTACTOE()
     char mark;
     do
     {
-        board();
+        board(kotak);
         pemain = (pemain % 2) ? 1 : 2;
         printf("\n\n");
         printf("                                                                                      PEMAIN %d \n", pemain);
@@ -57,12 +57,12 @@ void TICTACTOE()
             pemain--;
 
         }
-        i = checkwin();
+        i = checkwin(kotak);
 
         pemain++;
     }while (i ==  - 1);
     
-    board();
+    board(kotak);
     
     if (i == 1){
         printf("\n                                                                                  PEMAIN %d MENANG!!! \n\n\n", --pemain);
@@ -85,7 +85,7 @@ void TICTACTOE()
     }
 }
 
-int checkwin()
+int checkwin(char *kotak)
 {
     if (kotak[1] == kotak[2] && kotak[2] == kotak[3])
         return 1;
@@ -126,7 +126,7 @@ FUNCTION TO DRAW BOARD OF TIC TAC TOE WITH pemainS MARK
  ********************************************************************/
 
 
-void board()
+void board(char *kotak)
 {
     system("cls");
     printf("\n\n\n\n\n\n\n\n\n\n\n");
