@@ -286,7 +286,7 @@ void PLAYGAME(Queue *qgame,int *skor)
                 INDENT();
 		char kotak[10] = { 'o', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
                 printf("                    Game TIC TAC TOE dimulai!\n\n");
-                TICTACTOE();
+                TICTACTOE(kotak);
             }
             else if ((compareSTR(HEAD(*qgame), "DINOSAUR IN EARTH")) || (compareSTR(HEAD(*qgame), "RISEWOMAN")) || (compareSTR(HEAD(*qgame), "EIFFEL TOWER"))){
                 printf("\n\n");
