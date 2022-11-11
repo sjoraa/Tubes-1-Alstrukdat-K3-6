@@ -284,6 +284,7 @@ void PLAYGAME(Queue *qgame,int *skor)
                 NEXT();
                 printf("\n\n");
                 INDENT();
+		char kotak[10] = { 'o', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
                 printf("                    Game TIC TAC TOE dimulai!\n\n");
                 TICTACTOE();
             }
