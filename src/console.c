@@ -108,7 +108,7 @@ void LISTGAME(ArrayDin arraygame)
     }
 }
 
-void DELETEGAME(ArrayDin *arraygame)
+void DELETEGAME(ArrayDin *arraygame, Queue qgame)
 {
     LISTGAME(*arraygame);
     INDENT();
@@ -119,6 +119,13 @@ void DELETEGAME(ArrayDin *arraygame)
         printf("\n\n");
         INDENT();
         printf("                    Game gagal dihapus\n");
+    }
+    else if (isInQueue(qgame, arraygame->A[i - 1])){
+        printf("\n\n");
+        INDENT();
+        printf("                 Game masih dalam antrean.\n");
+        INDENT();
+        printf("                    Game gagal dihapus.\n");
     }
     else{
         DeleteAt(arraygame, i-1);
