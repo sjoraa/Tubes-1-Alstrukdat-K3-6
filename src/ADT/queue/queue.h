@@ -53,6 +53,8 @@ boolean isFull(Queue q);
 int length(Queue q);
 /* Mengirimkan banyaknya elemen queue. Mengirimkan 0 jika q kosong. */
 
+boolean isInQueue(Queue q, char *str);
+
 /* *** Primitif Add/Delete *** */
 void enqueue(Queue *q, ElType val);
 /* Proses: Menambahkan val pada q dengan aturan FIFO */
