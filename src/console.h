@@ -24,7 +24,7 @@ void CREATEGAME(ArrayDin *arraygame);
 
 void LISTGAME(ArrayDin arraygame);
 
-void DELETEGAME(ArrayDin *arraygame);
+void DELETEGAME(ArrayDin *arraygame, Queue qgame);
 
 void QUEUEGAME(ArrayDin *arraygame,Queue *qgame);
 
