@@ -42,7 +42,7 @@ int nbElmt(Scoreboard S){
 
 void displayscoreboard(Scoreboard S){
     int length = nbElmt(S);
-    printf("Scoreboard RNG\n");
+    printf("SCOREBOARD GAME RNG\n");
     int check = 0;
     for (int i = 0; i < length; i++){
         if (S.d[i].type == "RNG"){
@@ -55,7 +55,7 @@ void displayscoreboard(Scoreboard S){
     }
 
     check = 0;
-    printf("Scoreboard Diner Dash\n");
+    printf("SCOREBOARD GAME DINER DASH\n");
     for (int i = 0; i < length; i++){
         if (S.d[i].type == "Diner Dash"){
             check ++;
@@ -67,7 +67,7 @@ void displayscoreboard(Scoreboard S){
     }
 
     check = 0;
-    printf("Scoreboard Tictactoe\n");
+    printf("SCOREBOARD GAME TICTACTOE\n");
     for (int i = 0; i < length; i++){
         if (S.d[i].type == "Tictactoe"){
             check ++;
@@ -79,7 +79,7 @@ void displayscoreboard(Scoreboard S){
     }
 
     check = 0;
-    printf("Scoreboard Tower of Hanoi\n");
+    printf("SCOREBOARD GAME TOWER OF HANOI\n");
     for (int i = 0; i < length; i++){
         if (S.d[i].type == "Tower of Hanoi"){
             check ++;
@@ -91,7 +91,7 @@ void displayscoreboard(Scoreboard S){
     }
 
     check = 0;
-    printf("Scoreboard Snake on Meteor\n");
+    printf("SCOREBOARD GAME SNAKE ON METEOR\n");
     for (int i = 0; i < length; i++){
         if (S.d[i].type == "Snake on Meteor"){
             check ++;
@@ -103,7 +103,7 @@ void displayscoreboard(Scoreboard S){
     }
 
     check = 0;
-    printf("Scoreboard HANGMAN\n");
+    printf("SCOREBOARD GAME HANGMAN\n");
     for (int i = 0; i < length; i++){
         if (S.d[i].type == "HANGMAN"){
             check ++;
