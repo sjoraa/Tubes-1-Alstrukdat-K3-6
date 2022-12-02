@@ -72,4 +72,6 @@ boolean isNumber(char *str_int);
 
 int stringToInt(char *str);
 
+int ToStr();
+
 #endif

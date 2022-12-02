@@ -6,8 +6,13 @@ int main(){
     ArrayDin arraygame = MakeArrayDin();
     ArrayDin historygame = MakeArrayDin();
     ArrayDin queuegame;
+    Stack history;
+    CreateStack(&history);
     Queue qgame;
     CreateQueue(&qgame);
+    scoreboard Mapgame;
+    Mapgame.lengthscoreboard=0;
+    
 
     boolean loadstatus = false;
     boolean endProgram = false;
@@ -21,7 +26,7 @@ int main(){
         if (countSpace(command) == 0){
             if(compareSTR(command,"START"))
             {
-                STARTBNMO(&arraygame);
+                STARTBNMO(&arraygame, &Mapgame);
                 NEXT();
                 loadstatus = true;
             }
@@ -41,7 +46,7 @@ int main(){
             char *second = secondString(command);
             if (compareSTR(first, "LOAD"))
             {
-                LOAD(&arraygame, second);
+                LOAD(&arraygame, second, &history, &Mapgame);
                 NEXT();
                 loadstatus = true;
             }
@@ -72,7 +77,7 @@ int main(){
         char *command = stringCommand();
         if (compareSTR(command,"CREATE GAME"))
         {
-            CREATEGAME(&arraygame);
+            CREATEGAME(&arraygame, &Mapgame);
             NEXT();
         }
         else if (compareSTR(command,"LIST GAME"))
@@ -82,7 +87,7 @@ int main(){
         }
         else if (compareSTR(command,"DELETE GAME"))
         {
-            DELETEGAME(&arraygame, qgame);
+            DELETEGAME(&arraygame, qgame, &Mapgame);
             NEXT();
         }
         else if (compareSTR(command,"QUEUE GAME"))
@@ -92,10 +97,40 @@ int main(){
         }
         else if (compareSTR(command,"PLAY GAME"))
         {
-
-            PLAYGAME(&qgame, &skor);
+            PLAYGAME(&qgame, &skor, &history, &Mapgame);
             NEXT();
         
+        }
+        else if (compareSTR(command, "SCOREBOARD")) {
+            system("cls");
+            PRINTSCOREBOARD(Mapgame);
+        }
+        else if (compareSTR(command, "RESET HISTORY")){
+            system("cls");
+            printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            INDENT();
+            printf("    APAKAH KAMU YAKIN INGIN MELAKUKAN RESET HISTORY? ");
+            INDENT();
+            printf("                    (YES/NO) : ");
+            char *option = stringCommand();
+            if (compareSTR(option, "YES")){
+                RESETHISTORY(&history);
+                NEXT();
+            }
+            else if (compareSTR(option, "NO")){
+                INDENT();
+                printf("History tidak jadi di-reset. Berikut adalah daftar Game yang telah dimainkan\n");
+                HISTORY(&history,lengthstack(history));
+                NEXT();
+            }
+            else{
+                INDENT();
+                printf("        Command tidak dikenali. Silakan coba lagi.\n");
+                NEXT();
+            }
+        }
+        else if (compareSTR(command, "RESET SCOREBOARD")){
+            RESETSCOREBOARD(&Mapgame);
         }
         else if (countSpace(command) == 1){
             char *first = firstString(command);
@@ -107,7 +142,12 @@ int main(){
                 NEXT();
             }
             else if (compareSTR(first, "SAVE")){
-                SAVE(&arraygame, second);
+                SAVE(&arraygame, second, Mapgame, history);
+                NEXT();
+            }
+            else if (compareSTR(first, "HISTORY")){
+                int n = stringToInt(second);
+                HISTORY(&history, n);
                 NEXT();
             }
             else{

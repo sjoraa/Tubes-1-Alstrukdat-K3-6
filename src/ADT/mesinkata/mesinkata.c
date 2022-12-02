@@ -233,3 +233,13 @@ int stringToInt(char *str){
         return result;
     }
 }
+
+int ToStr(){
+    int i = 0;
+    int result = 0;
+    while(currentWord.TabWord[i] != '\0'){
+        result = result * 10 + currentWord.TabWord[i] - '0';
+        i++;
+    }
+    return result;
+}
