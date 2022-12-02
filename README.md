@@ -19,13 +19,13 @@ Jika membuka dari github:
 5. Ketik "gcc main.c -o <nama program>" dan tekan enter
 6. Ketik <nama program> dan tekan enter
 
-Jika membuka dari file .zip
+Jika membuka dari file .zip:
 1. Extract file di tempat yang diinginkan
 2. Buka terminal di tempat zip di extract
 3. Ubah directory ke "src"
 4. Ketik gcc main.c -o <nama program>" dan tekan enter
 5. Ketik <nama program> dan tekan enter
 
-Jika memulai program dari main.exe
+Jika memulai program dari main.exe:
 1. Buka folder "src"
 2. Klik main.exe
